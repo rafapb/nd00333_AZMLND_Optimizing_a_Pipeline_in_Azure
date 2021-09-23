@@ -46,8 +46,15 @@ Any run that doesn't fall within the slack factor or slack amount of the evaluat
 [Azure's AutoML](https://docs.microsoft.com/en-us/azure/machine-learning/concept-automated-ml) created a number of pipelines in parallel that tried different algorithms and parameters automatically. 
 The best model obtained by AutoML was a Voting Ensemble, which achieved an accuracy of 91.66%.
 Azure Machine Learning Studio showed that the resulting Voting Ensemble consisted of a voting of 7 different algorithms (4 XGBoost, 1 SGD, 1 LogisticRegression, and 1 LightGBM algotithms).
-One of these 7 algorithms, an XGBoost algorithm, had a weight of 0.25. All the other algorithms had a weight of 0.125.
+One of these 7 algorithms, an XGBoost algorithm, had a weight of 0.25. All the other algorithms had a weight of 0.125.  
+  
+The ensemble details can easily be seen in Azure's ML Studio:
 
+![Voting Ensemble](/img/voting_ensemble.png)
+
+Azure's ML Studio can also show other metrics, below is the confusion matrix obtained:
+
+![AutoML Confusion Matrix](/img/automl_confusion_matrix.png)
 
 ## Pipeline comparison
 
