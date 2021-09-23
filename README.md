@@ -70,10 +70,12 @@ Although the two models obtained an accuracy over 90%, the dataset is quite imba
 The dataset contains 3692 observations that have a target label "yes" and 29258 observations with a target label "no".
 Measuring the performance with accuracy is not very appropiate since a model that predicted only the majority class would achieve an 88.80% accuracy but would be useless.
 Therefore, it would be interesting to using a different metric such as the F1-score.
+
 More information about how to choose an evaluation metric for a classification problem with an imbalanced dataset can be found [here](https://machinelearningmastery.com/tour-of-evaluation-metrics-for-imbalanced-classification/).
 
 This imbalance in the dataset can influence many machine learning algorithms into ignoring the minority class, which in this case, is the label "yes".
 Therefore, it would be interesting to perform a random oversampling of the minority class or undersampling of the majority class in order to achieve a more balanced dataset.
+
 More on random oversampling and undersampling for imblanced classification can be found [here](https://machinelearningmastery.com/random-oversampling-and-undersampling-for-imbalanced-classification/).
 
 Last but not least, it would also be interesting to use a [Bayseian Parameter Sampler](https://docs.microsoft.com/en-us/python/api/azureml-train-core/azureml.train.hyperdrive.bayesianparametersampling?view=azure-ml-py) with the Logistic Regression model.
