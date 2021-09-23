@@ -20,7 +20,7 @@ The best performing model was a Voting Ensemble ran by AutoML. This model achiev
 
 ## Scikit-learn Pipeline
 
-After setting up the workspace and environment, the script "train.py" is called. The data is then downloaded from a URL and used in the TabularDatasetFactory class to create a tabular dataset. Afterwards, the data is cleaned and pre-processed by dropping null values and encoding categorical variables. 
+After setting up the workspace and environment, the script "train.py" is called. The data is then downloaded from a URL and used in the TabularDatasetFactory class to create a tabular dataset. Afterwards, the data is cleaned and preprocessed by dropping null values and encoding categorical variables. 
 Then, the features and target variable are separated and splitted into train and test data. 
 A Logistic Regression model is fit using the training data. 
 HyperDrive is used to tune the hyperparameters of the Logistic Regression model, which are Regularization Strength (C) and Maximum Number of Iteratations (max_iter).
