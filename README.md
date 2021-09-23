@@ -10,8 +10,8 @@ This model is then compared to an Azure AutoML run.
 
 ## Summary
 
-This dataset contains data about direct marketing campaings (phone calls) of a Portuguese banking institution. 
-The dataset can be downloaded [here](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv).
+This dataset contains data about direct marketing campaings (phone calls) of a Portuguese banking institution.  
+The dataset used can be downloaded [here](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv).
 
 A detailed description of the data features can be found [here](https://archive.ics.uci.edu/ml/datasets/bank+marketing#).
 
@@ -51,7 +51,7 @@ The ensemble details can easily be seen in Azure's ML Studio:
 
 ![Voting Ensemble](/img/voting_ensemble.png)
 
-Azure's ML Studio can also show other metrics, below is the confusion matrix obtained:
+Azure's ML Studio can also show other metrics such as the confusion matrix:
 
 ![AutoML Confusion Matrix](/img/automl_confusion_matrix.png)
 
