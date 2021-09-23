@@ -13,22 +13,21 @@ This model is then compared to an Azure AutoML run.
 This dataset contains data about direct marketing campaings (phone calls) of a Portuguese banking institution. 
 The dataset can be downloaded [here](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv).
 
-More information about the data can be found [here](https://archive.ics.uci.edu/ml/datasets/bank+marketing#).
+A detailed description of the data features can be found [here](https://archive.ics.uci.edu/ml/datasets/bank+marketing#).
 
 We seeked to predict if a client will subscribe a term deposit (target variable y being "yes" or "no"). Therefore, this is a classification problem.
 The best performing model was a Voting Ensemble ran by AutoML. This model achieved an accuracy of 91.66%.
 
 ## Scikit-learn Pipeline
 
-First, the script "train.py" is called. The data is then downloaded from a URL and used in the TabularDatasetFactory class to create a tabular dataset.
-Afterwards, the data is cleaned and pre-processed by dropping null values and encoding categorical variables. 
-Then, the features and target variable are separated and splitted intro train and test data. 
+After setting up the workspace and environment, the script "train.py" is called. The data is then downloaded from a URL and used in the TabularDatasetFactory class to create a tabular dataset. Afterwards, the data is cleaned and pre-processed by dropping null values and encoding categorical variables. 
+Then, the features and target variable are separated and splitted into train and test data. 
 A Logistic Regression model is fit using the training data. 
 HyperDrive is used to tune the hyperparameters of the Logistic Regression model, which are Regularization Strength (C) and Maximum Number of Iteratations (max_iter).
 Azure's HyperDrive was used with a Random Parameter Sampler and an Bandit Policy for early stopping.
 The Logistic Regression model with parameters C = 50 and max_iter = 300 obtains the highest accuracy, 90.91%. 
 
-To learn more about how hyperparameter tuning with Azure's HyperDrive, click [here](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters).
+To learn more about hyperparameter tuning with Azure's HyperDrive, click [here](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters).
 
 ### Parameter sampler
 
