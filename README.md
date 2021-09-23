@@ -68,7 +68,7 @@ HyperDrive only tunes one model at a time whereas AutoML can tune and compare se
 Although the two models obtained an accuracy over 90%, the dataset is quite imbalanced. 
 The dataset contains 3692 observations that have a target label "yes" and 29258 observations with a target label "no".
 Measuring the performance with accuracy is not very appropiate since a model that predicted only the majority class would achieve an 88.80% accuracy but would be useless.
-Therefore, it would be interesting to using a different metric such as the F1-score.
+Therefore, it would be interesting to use a different metric such as the F1-score.
 
 More information about how to choose an evaluation metric for a classification problem with an imbalanced dataset can be found [here](https://machinelearningmastery.com/tour-of-evaluation-metrics-for-imbalanced-classification/).
 
