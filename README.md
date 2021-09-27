@@ -43,6 +43,28 @@ Any run that doesn't fall within the slack factor or slack amount of the evaluat
 ## AutoML
 
 [Azure's AutoML](https://docs.microsoft.com/en-us/azure/machine-learning/concept-automated-ml) created a number of pipelines in parallel that tried different algorithms and parameters automatically. 
+
+The following [AutoML configuration](https://docs.microsoft.com/en-us/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?view=azure-ml-py) is used:
+
+```ruby
+automl_config = AutoMLConfig(
+    experiment_timeout_minutes=30,
+    task="classification",
+    primary_metric="accuracy",
+    training_data=ds,
+    label_column_name="y",
+    n_cross_validations=2)
+```
+
+| Parameter  | Description |
+| ------------- | ------------- |
+| experiment_timeout_minutes  | The maximum amount of time before the experiment terminates. In this case, AutoML will stop the experiment in 30 minutes. |
+| task  | The task to be performed. In this case, it is a classification problem. |
+| primary_metric  | The [metric](https://docs.microsoft.com/en-us/python/api/azureml-automl-core/azureml.automl.core.shared.constants.metric?view=azure-ml-py) that AutoML optimizes for model selection. In this case, accuracy was chosen. |
+| training_data  | The training data to be used within the experiment. It should contain both training features and a label column (optionally a sample weights column). |
+| label_column_name  | The name of the label column. |
+| n_cross_validations  | The number of [cross validations](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-configure-cross-validation-data-splits) to perform. |
+
 The best model obtained by AutoML was a Voting Ensemble, which achieved an accuracy of 91.66%.
 Azure Machine Learning Studio showed that the resulting Voting Ensemble consisted of a voting of 7 different algorithms (4 XGBoost, 1 SGD, 1 LogisticRegression, and 1 LightGBM algotithms).
 One of these 7 algorithms, an XGBoost algorithm, had a weight of 0.25. All the other algorithms had a weight of 0.125.  
